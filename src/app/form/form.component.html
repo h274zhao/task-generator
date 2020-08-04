@@ -1,0 +1,62 @@
+<form>
+  <div class="form-group">
+    <label for="hobby">Which of the following do you enjoy doing?</label>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="check_art" [(ngModel)]="question1.art" [ngModelOptions]="{standalone: true}">
+      <label class="form-check-label" for="check_art">Art</label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="check-sports"
+      [(ngModel)]="question1.sports" [ngModelOptions]="{standalone: true}">
+      <label class="form-check-label" for="check-sports">Sports</label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="check-puzzles"
+      [(ngModel)]="question1.puzzles" [ngModelOptions]="{standalone: true}">
+      <label class="form-check-label" for="check-puzzles">Puzzles</label>
+    </div>
+  </div>
+
+  <div class="form-group"> 
+    <label for="location-urban-rural">Do you live in an urban or rural area?</label>
+    <span class="error_label" *ngIf="q2_error"> Required. Check spelling </span>
+    <input type="text" class="form-control" id="location-urban-rural" placeholder="Urban" [(ngModel)]="q2_urban_rural" [ngModelOptions]="{standalone: true}">
+  </div>
+
+  <div class="form-group"> 
+    <label>Yes/No: I think of myself as a creative person</label>
+    <span class="error_label" *ngIf="q3_error"> Required. Check spelling </span>
+    <input type="text" class="form-control"  placeholder="Yes" [(ngModel)]="q3_creative" [ngModelOptions]="{standalone: true}">
+  </div>
+
+  <div class="form-group">
+    <label>Yes/No: I think of myself as an athletic person</label> 
+    <span class="error_label" *ngIf="q4_error"> Required. Check spelling </span>
+    <input type="text" class="form-control" placeholder="Yes" [(ngModel)]="q4_athletic" [ngModelOptions]="{standalone: true}">
+  </div>
+
+  <div class="form-group">
+    <label>Yes/No: I like solving challenging problems</label>
+    <span class="error_label" *ngIf="q5_error"> Required. Check spelling </span>
+    <input type="text" class="form-control" placeholder="Yes" [(ngModel)]="q5_thinking" [ngModelOptions]="{standalone: true}">
+  </div>
+
+  <div class="form-group">
+    <label style="margin-right: 20px;">I want to try something new that I might not like </label> 
+    <span class="error_label" *ngIf="q6_error"> Please select one </span>
+    <br>
+    <label class="radio-inline" style="margin-right: 10px;">
+      <input type="radio" name="optradio" (change)="onRadioChange('yes')"> 
+      Yes 
+    </label>
+    <label class="radio-inline" style="margin-right: 10px;">
+      <input type="radio" name="optradio" (change)="onRadioChange('no')"> 
+      No 
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" (change)="onRadioChange('maybe')"> 
+      Maybe 
+    </label> 
+  </div>
+</form>
+<button class="btn btn-primary btn-lg" (click)="onGenerate()">Generate</button>

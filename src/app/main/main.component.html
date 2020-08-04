@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to Task Generator!</h1>
+  <p class="lead">Feeling bored? Fill in the form below and we'll generate a task for you.</p>
+  <hr class="my-4">
+  <app-form (generate)="onGenerate($event)"></app-form>
+<div>
+  <app-suggestion></app-suggestion>
+</div>
+</div>
